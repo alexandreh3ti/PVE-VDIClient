@@ -1,6 +1,6 @@
 # PVE VDI Client
 
-This project's focus is to create a simple VDI client intended for mass deployment. This VDI client connects directly to Proxmox VE and allows users to connect (via Spice) to any VMs they have permission to access.
+O foco deste projeto é criar um cliente VDI simples destinado à implantação em massa. Este cliente VDI se conecta diretamente ao Proxmox VE e permite que os usuários se conectem (via Spice) a quaisquer VMs que tenham permissão para acessar.
 
 ![Login Screen](screenshots/login.png)
 
@@ -8,21 +8,21 @@ This project's focus is to create a simple VDI client intended for mass deployme
 
 ![VDI View](screenshots/vdiview.png)
 
-## Windows Installation
+## Instalação do Windows
 
-You **MUST** install virt-viewer prior to using PVE VDI client, you may download it from the [official Virtual Machine Manager](https://virt-manager.org/download/) site.
+Você deve instalar o virt-viewer antes de usar o cliente PVE VDI, você pode baixá-lo no site [official Virtual Machine Manager](https://virt-manager.org/download/) site.
 
-Please visit the [releases](https://github.com/joshpatten/PVE-VDIClient/releases) section to download a prebuilt MSI package
+Visite a seção [releases](https://github.com/joshpatten/PVE-VDIClient/releases) para baixar um pacote MSI pré-reconstruído
 
-If you need to customize the installation, such as to sign the executable and MSI, you may download and install the [WIX toolset](https://wixtoolset.org/releases/) and use the build_vdiclient.bat file to build a new MSI.
+Se você precisar personalizar a instalação, como assinar o executável e o MSI, você pode baixar e instalar o [WIX toolset](https://wixtoolset.org/releases/) e usar o arquivo build_vdiclient.bat para construir um novo MSI.
 
-you will need to download the latest 3.10 python release, and run the following commands to install the necessary packages:
+você precisará baixar a versão python 3.10 mais recente e executar os seguintes comandos para instalar os pacotes necessários:
 
     requirements.bat
 
-## Linux Installation
+## Instalação linux
 
-Run the following commands on a Debian/Ubuntu Linux system to install the appropriate prerequisites
+Execute os seguintes comandos em um sistema Linux Debian/Ubuntu para instalar os pré-requisitos apropriados
 
     apt install python3-pip virt-viewer
     chmod +x requirements.sh
@@ -30,9 +30,9 @@ Run the following commands on a Debian/Ubuntu Linux system to install the approp
     cp vdiclient.py /usr/local/bin
     chmod +x /usr/local/bin/vdiclient.py
 
-## Configuration File
+## Arquivo de configuração
 
-PVE VDI Client **REQUIRES** a configuration file to function. The client searches for this file in the following locations unless **--config** is specified on the commmand line:
+O cliente PVE VDI REQUER um arquivo de configuração para funcionar. O cliente procura por este arquivo nos seguintes locais, a menos que --config seja especificado na linha de comando:
 
 * Windows
     * %APPDATA%\VDIClient\vdiclient.ini
@@ -42,13 +42,13 @@ PVE VDI Client **REQUIRES** a configuration file to function. The client searche
     * /etc/vdiclient/vdiclient.ini
     * /usr/local/etc/vdiclient/vdiclient.ini
 
-Please refer to **vdiclient.ini.example** for all available config file options
+Consulte **vdiclient.ini.example** para todas as opções de arquivos config disponíveis
 
-If you encounter any issues feel free to submit an issue report.
+Se você encontrar quaisquer problemas, sinta-se livre para enviar um relatório de emissão.
 
-## Proxmox Permission Requirements
+## Requisitos de permissão proxmox
 
-Users that are accessing VDI instances need to have the following permissions assigned for each VM they access:
+Os usuários que estão acessando as instâncias VDI precisam ter as seguintes permissões atribuídas para cada VM que acessam:
 
 * VM.PowerMgmt
 * VM.Console
